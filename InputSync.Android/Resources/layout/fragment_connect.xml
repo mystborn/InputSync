@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/connect_title_guide_horizontal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.1"/>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/connect_ip_guide_horizontal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.35"/>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/connect_ip_guide_vertical_start"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical" 
+        app:layout_constraintGuide_percent="0.15" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/connect_ip_guide_vertical_end"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical" 
+        app:layout_constraintGuide_percent="0.9" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/connect_connect_guide_horizontal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.65"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/connect_title"
+        android:textStyle="bold"
+        android:textSize="22sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="@id/connect_title_guide_horizontal"/>
+
+    <TextView
+        android:id="@+id/connect_ip_label"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/connect_ip"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toStartOf="@id/connect_ip_guide_vertical_start"
+        app:layout_constraintBottom_toTopOf="@id/connect_ip_guide_horizontal" />
+
+    <EditText
+        android:id="@+id/connect_ip_field"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="10dp"
+        android:inputType="textUri"
+        app:layout_constraintStart_toEndOf="@id/connect_ip_label"
+        app:layout_constraintEnd_toEndOf="@id/connect_ip_guide_vertical_end"
+        app:layout_constraintBaseline_toBaselineOf="@id/connect_ip_label" />
+
+    <TextView
+        android:id="@+id/connect_port_label"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/connect_port"
+        android:textStyle="bold"
+        android:layout_marginTop="40dp"
+        app:layout_constraintEnd_toStartOf="@id/connect_ip_guide_vertical_start"
+        app:layout_constraintTop_toBottomOf="@id/connect_ip_label" />
+
+    <EditText
+        android:id="@+id/connect_port_field"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="10dp"
+        android:inputType="number"
+        app:layout_constraintStart_toEndOf="@id/connect_port_label"
+        app:layout_constraintEnd_toEndOf="@id/connect_ip_guide_vertical_end"
+        app:layout_constraintBaseline_toBaselineOf="@id/connect_port_label" />
+
+    <CheckBox
+        android:id="@+id/connect_save_settings_checkbox"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/connect_save_settings"
+        app:layout_constraintTop_toBottomOf="@id/connect_port_label"
+        app:layout_constraintBottom_toTopOf="@id/connect_connect_button"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <Button
+        android:id="@+id/connect_connect_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/connect_connect"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/connect_connect_guide_horizontal"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

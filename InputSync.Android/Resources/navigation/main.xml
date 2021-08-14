@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<navigation
+  xmlns:android="http://schemas.android.com/apk/res/android"
+  xmlns:app="http://schemas.android.com/apk/res-auto"
+  android:id="@+id/nav_graph"
+  app:startDestination="@id/connectFragment">
+
+  <fragment
+    android:id="@+id/connectFragment"
+    android:name="InputSync.Android.ConnectFragment"
+    android:label="connect_fragment">
+
+    <action
+      android:id="@+id/action_connectFragment_to_keyPressFragment"
+      app:destination="@id/keyPressFragment" />
+
+  </fragment>
+
+  <fragment
+    android:id="@+id/keyPressFragment"
+    android:name="InputSync.Android.KeyPressFragment"
+    android:label="key_press_fragment">
+
+    <action
+      android:id="@+id/action_keyPressFragment_to_connectFragment"
+      app:destination="@id/connectFragment" />
+
+  </fragment>
+  
+</navigation>
